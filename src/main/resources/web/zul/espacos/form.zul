@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <grid style="border: none;">
+        <columns>
+            <column width="140px" />
+            <column />
+        </columns>
+        <rows>
+            <row style="border: none; background: transparent;">
+                <label value="Nome do Espaço:" style="font-weight: bold;" />
+                <textbox value="@bind(vm.espaco.nome)" hflex="1" placeholder="Ex: Laboratório de Informática 01" />
+            </row>
+            <row style="border: none; background: transparent;">
+                <label value="Tipo:" style="font-weight: bold;" />
+                <combobox model="@load(vm.tiposAmbiente)"
+                          selectedItem="@bind(vm.espaco.tipo)"
+                          hflex="1"
+                          readonly="true"
+                          placeholder="Selecione o tipo do espaço">
+                    <template name="model">
+                        <comboitem label="@load(each.descricao)" value="@load(each)" />
+                    </template>
+                </combobox>
+            </row>
+            <row style="border: none; background: transparent;">
+                <label value="Capacidade Máx:" style="font-weight: bold;" />
+                <intbox value="@bind(vm.espaco.capacidadeMaxima)" hflex="1" placeholder="Ex: 35" />
+            </row>
+        </rows>
+    </grid>
+    <hlayout spacing="10px" style="margin-top: 15px;">
+        <button label="💾 Salvar" onClick="@command('salvar')" style="background: #28a745; color: white; font-weight: bold; border: none; border-radius: 20px; padding: 6px 16px; cursor: pointer;" />
+        <button label="➕ Novo" onClick="@command('novo')" style="background: #6c757d; color: white; border: none; border-radius: 20px; padding: 6px 16px; cursor: pointer;" />
+    </hlayout>
+</zk>

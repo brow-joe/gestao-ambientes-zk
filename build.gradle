@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.3'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.gestao.zk'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://mavensync.zkoss.org/maven2/' }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.zkoss.zkspringboot:zkspringboot-starter:4.0.5'
+
+    implementation("org.apache.commons:commons-lang3:3.20.0")
+    implementation 'org.zkoss.zk:zk:10.0.0-jakarta'
+    implementation 'org.zkoss.zk:zul:10.0.0-jakarta'
+    implementation 'org.zkoss.zk:zkbind:10.0.0-jakarta'
+    implementation 'org.zkoss.zk:zkplus:10.0.0-jakarta'
+
+    implementation 'org.flywaydb:flyway-core'
+
+    runtimeOnly 'com.h2database:h2'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

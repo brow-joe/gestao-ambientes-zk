@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <listbox model="@load(vm.ambientes)" height="250px" hflex="1">
+        <listhead hflex="1">
+            <listheader label="Ambiente" hflex="2" />
+            <listheader label="Tipo" hflex="1" />
+            <listheader label="Ocupação" width="110px" align="center" />
+            <listheader label="Capacidade" width="120px" align="center" />
+        </listhead>
+        <template name="model">
+            <listitem>
+                <listcell label="@load(each.nome)" />
+                <listcell label="@load(each.tipo.descricao)" />
+                <listcell label="@load(vm.getOcupacaoAtual(each))" style="font-weight: bold; color: #0056b3;" />
+                <listcell label="@load(each.capacidadeMaxima)" />
+            </listitem>
+        </template>
+    </listbox>
+</zk>

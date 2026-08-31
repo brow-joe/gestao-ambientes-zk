@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <listbox model="@load(vm.espacos)" emptyMessage="Nenhum espaço cadastrado." vflex="1" mold="paging" pageSize="8">
+        <listhead>
+            <listheader label="ID" width="60px" align="center" />
+            <listheader label="Ambiente" />
+            <listheader label="Tipo" width="160px" />
+            <listheader label="Capacidade" width="130px" align="center" />
+            <listheader label="Ações" width="180px" align="center" />
+        </listhead>
+        <template name="model">
+            <listitem>
+                <listcell label="@load(each.id)" />
+                <listcell label="@load(each.nome)" />
+                <listcell label="@load(each.tipo.descricao)" />
+                <listcell label="@load(each.capacidadeMaxima)" />
+                <listcell style="text-align: center;">
+                    <hlayout spacing="6px" style="display: inline-flex; vertical-align: middle;">
+                        <button label="✏️ Editar" onClick="@command('editar', espaco=each)" style="font-size: 11px; padding: 4px 10px; border: none; border-radius: 12px; cursor: pointer;" />
+                        <button label="🗑️ Excluir" onClick="@command('deletar', id=each.id)" style="font-size: 11px; padding: 4px 10px; border: none; border-radius: 12px; cursor: pointer; background: #fee2e2; color: #dc2626;" />
+                    </hlayout>
+                </listcell>
+            </listitem>
+        </template>
+    </listbox>
+</zk>

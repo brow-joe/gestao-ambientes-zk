@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <tabbox width="100%" vflex="1" style="border: none; background: transparent;">
+        <tabs style="background: transparent; border: none;">
+            <tab label="📊 Controle de Acesso &amp; Ocupação" style="font-weight: bold; padding: 10px 20px;" />
+            <tab label="👥 Cadastro de Alunos" style="font-weight: bold; padding: 10px 20px;" />
+            <tab label="🏢 Cadastro de Espaços" style="font-weight: bold; padding: 10px 20px;" />
+        </tabs>
+        <tabpanels style="border: none; background: transparent;">
+            <tabpanel style="background: #ffffff; border-radius: 6px; padding: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                <include src="~./zul/presenca/index.zul" />
+            </tabpanel>
+            <tabpanel style="background: #ffffff; border-radius: 6px; padding: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                <include src="~./zul/alunos/index.zul" />
+            </tabpanel>
+            <tabpanel style="background: #ffffff; border-radius: 6px; padding: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                <include src="~./zul/espacos/index.zul" />
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+</zk>

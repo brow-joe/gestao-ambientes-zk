@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <div sclass="footer-container" style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 10px 15px; background: #ffffff; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); font-size: 12px; color: #64748b;">
+        <label value="© 2026 - Sistema de Gestão de Espaços Acadêmicos" />
+        <div style="display: flex; gap: 15px;">
+            <label value="ZK Framework 10" style="color: #94a3b8;" />
+            <label value="•" style="color: #cbd5e1;" />
+            <label value="Spring Boot" style="color: #94a3b8;" />
+        </div>
+    </div>
+</zk>

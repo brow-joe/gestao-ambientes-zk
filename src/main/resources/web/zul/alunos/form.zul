@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <grid style="border: none;">
+        <columns>
+            <column width="100px" />
+            <column />
+        </columns>
+        <rows>
+            <row style="border: none; background: transparent;">
+                <label value="Matrícula:" style="font-weight: bold;" />
+                <textbox value="@bind(vm.aluno.matricula)" hflex="1" placeholder="Ex: 2026001" />
+            </row>
+            <row style="border: none; background: transparent;">
+                <label value="Nome:" style="font-weight: bold;" />
+                <textbox value="@bind(vm.aluno.nome)" hflex="1" placeholder="Nome completo do aluno" />
+            </row>
+            <row style="border: none; background: transparent;">
+                <label value="E-mail:" style="font-weight: bold;" />
+                <textbox value="@bind(vm.aluno.email)" hflex="1" placeholder="email@universidade.com"
+                         constraint="/^(.+@.+\..*)?$/ : Formato de e-mail inválido" />
+            </row>
+        </rows>
+    </grid>
+    <hlayout spacing="10px" style="margin-top: 15px;">
+        <button label="💾 Salvar" onClick="@command('salvar')" style="background: #28a745; color: white; font-weight: bold; border: none; border-radius: 20px; padding: 6px 16px; cursor: pointer;" />
+        <button label="➕ Novo" onClick="@command('novo')" style="background: #6c757d; color: white; border: none; border-radius: 20px; padding: 6px 16px; cursor: pointer;" />
+    </hlayout>
+</zk>

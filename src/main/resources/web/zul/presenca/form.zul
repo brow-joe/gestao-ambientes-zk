@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <grid style="border: none; background: transparent;" hflex="1">
+        <columns>
+            <column width="180px" style="background: transparent;" />
+            <column hflex="1" style="background: transparent;" />
+        </columns>
+        <rows>
+            <row style="border: none; background: transparent;">
+                <label value="Aluno:" style="font-weight: bold;" />
+                <combobox model="@load(vm.alunos)" selectedItem="@bind(vm.aluno)"
+                          autocomplete="true" autodrop="true" hflex="1" placeholder="Selecione ou digite o nome do aluno...">
+                    <template name="model">
+                        <comboitem label="@load(each.nome)" description="@load(each.matricula)"/>
+                    </template>
+                </combobox>
+            </row>
+            <row style="border: none; background: transparent;">
+                <label value="Ambiente:" style="font-weight: bold;" />
+                <combobox model="@load(vm.ambientes)" selectedItem="@bind(vm.ambiente)"
+                          autocomplete="true" autodrop="true" hflex="1" placeholder="Selecione o espaço...">
+                    <template name="model">
+                        <comboitem label="@load(each.nome)" description="@load(each.tipo)"/>
+                    </template>
+                </combobox>
+            </row>
+        </rows>
+    </grid>
+    <hlayout spacing="10px" style="margin-top: 15px;">
+        <button label="Registrar Entrada" onClick="@command('registrarEntrada')" style="background-color: #2563eb; color: white; font-weight: bold; border: none; border-radius: 20px; padding: 6px 16px; cursor: pointer;" />
+        <button label="Registrar Saída" onClick="@command('registrarSaida')" style="background-color: #f59e0b; color: white; font-weight: bold; border: none; border-radius: 20px; padding: 6px 16px; cursor: pointer;" />
+    </hlayout>
+</zk>

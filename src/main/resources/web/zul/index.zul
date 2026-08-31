@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window hflex="1" vflex="1" style="background-color: #f4f6f9; padding: 10px;">
+        <include src="~./zul/header.zul" />
+        <include src="~./zul/body.zul" vflex="1" />
+        <include src="~./zul/footer.zul" />
+    </window>
+</zk>
